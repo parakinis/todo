@@ -1,0 +1,8 @@
+table td {
+    position: relative;
+}
+table .status {
+    position: absolute;
+    top: 18px;
+    left:-6px;
+}

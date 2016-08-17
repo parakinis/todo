@@ -1,0 +1,24 @@
+<div class="col-md-4 list-{{ list.id }}">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-fw fa-list"></i> {{ list.title }} | {{ list.createdAt|date("Y-m-d H:i") }} <span class="pull-right"><button class="btn btn-danger btn-xs js-list-delete" data-listid="{{ list.id }}"><i class="fa fa-recycle"></i> Trinti sąrašą</button></span>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <tbody>
+                    {% for note in list.notes %}
+                        {{ include(':default:noteitem.html.twig', {'note': note}) }}
+                    {% endfor %}
+                    <tr class="new-note-{{ list.id }}">
+                        <td>
+                            <input class="form-control" type="text" name="newNoteText" id="newNoteText-{{ list.id }}" />
+                        </td>
+                        <td><button class="btn btn-success js-note-add" data-collid="{{ list.id }}"><i class="fa fa-plus"></i> Pridėti</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

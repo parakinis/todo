@@ -1,0 +1,7 @@
+<tr class="note-{{ note.id }}">
+    <td><input class="form-control" type="text" value="{{ note.text }}" name="noteText-{{ note.id }}" id="noteText-{{ note.id }}" /></td>
+    <td>
+        <button class="btn btn-warning js-note-update" data-noteid="{{ note.id }}"><i class="fa fa-save"></i></button>
+        <button class="btn btn-danger js-note-delete" data-noteid="{{ note.id }}"><i class="fa fa-trash-o"></i></button>
+    </td>
+</tr>
